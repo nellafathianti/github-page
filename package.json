@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "next build && touch dist/.nojekyll && git add dist/ && git commit -m \"Deploy\" && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "next": "latest",
@@ -11,9 +12,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.2",
     "@types/node": "20.10.8",
     "@types/react": "18.2.47",
     "@types/react-dom": "18.2.18",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.2",
     "typescript": "^5.3.3"
   }
 }
